@@ -19,19 +19,21 @@ A transição do script serial (`avaliador.py`) para o distribuído (`avaliadorm
     * O comando *gather* consolida os resultados finais no mestre.
 
 ## 📊 3. Resultados e Performance
+## 📊 3. Resultados e Performance
+
 Os testes foram realizados variando de 1 a 12 processos (threads).
-+-----------+-----------+---------+------------+
+
 | Processos | Tempo (s) | Speedup | Eficiência |
-+-----------+-----------+---------+------------+
-|     1     |   40,30   |   1,00  |    1,00    |
-|     2     |   30,20   |   1,33  |    0,67    |
-|     4     |   20,15   |   2,00  |    0,50    |
-|     8     |   14,80   |   2,72  |    0,34    |
-|    12     |   12,80   |   3,15  |    0,26    |
-+-----------+-----------+---------+------------+
+| :---: | :---: | :---: | :---: |
+| 1 | 40,30 | 1,00 | 1,00 |
+| 2 | 30,20 | 1,33 | 0,67 |
+| 4 | 20,15 | 2,00 | 0,50 |
+| 8 | 14,80 | 2,72 | 0,34 |
+| 12 | 12,80 | 3,15 | 0,26 |
+
 ### Principais Constatações:
 * **Redução de Tempo:** O tempo total de processamento caiu em **65%**.
-* **Speedup Máximo:** 3.15x com 12 processos.
+* **Speedup Máximo:** 3,15x com 12 processos.
 
 ## ⚠️ 4. Análise Crítica
 1.  **Gargalo de Comunicação:** O custo de transferência de dados via MPI (overhead) torna-se significativo a partir de 8 processos.
